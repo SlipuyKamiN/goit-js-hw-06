@@ -16,8 +16,6 @@ let createList = function (array) {
     elementRef.textContent = element;
     elementRef.classList.add("item");
     items.push(elementRef);
-
-    // return items;
   });
   listRef.append(...items);
 };
