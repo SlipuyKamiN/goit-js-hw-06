@@ -27,5 +27,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  width: 800px;
+  max-width: 1800px;
+  list-style: none;
 }
