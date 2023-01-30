@@ -8,9 +8,9 @@ const refs = {
   colorDescription: document.querySelector(".color"),
 };
 
-const onBodyBackgroungColorChanging = (event) => {
+const onBodyBackgroungColorChanging = () => {
   refs.bodyEl.style.backgroundColor = getRandomHexColor();
-  refs.colorDescription.textContent = getRandomHexColor();
+  refs.colorDescription.textContent = refs.bodyEl.style.backgroundColor;
 };
 
 refs.button.addEventListener("click", onBodyBackgroungColorChanging);

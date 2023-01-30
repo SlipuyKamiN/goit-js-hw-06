@@ -9,11 +9,11 @@ const refs = {
   boxes: document.querySelector("#boxes"),
 };
 
-const createBoxes = (amount) => {
+const createBoxes = () => {
   let boxSize = 30;
   const newBoxes = [];
 
-  for (let i = 0; i < amount; i += 1) {
+  for (let i = 0; i < refs.input.value; i += 1) {
     const box = document.createElement("div");
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
@@ -25,15 +25,8 @@ const createBoxes = (amount) => {
   return refs.boxes.append(...newBoxes);
 };
 
-//Коли я пишу так :
-// refs.buttonCreate.addEventListener("click", createBoxes(refs.input.value));
-// В мене чомусь скрипт не працює, він не може взяти значення інпута в такому випадку,
-//  через змінну теж пробував, не виходить.
+const resetBoxes = () => (refs.boxes.innerHTML = "");
 
-refs.buttonCreate.addEventListener("click", () => {
-  createBoxes(refs.input.value);
-});
+refs.buttonCreate.addEventListener("click", createBoxes);
 
-refs.buttonDestroy.addEventListener("click", () => {
-  refs.boxes.innerHTML = "";
-});
+refs.buttonDestroy.addEventListener("click", resetBoxes);
